@@ -1,0 +1,31 @@
+<!-- <form (ngSubmit)="buscar()" autocomplete="off"> -->
+<!-- <input
+    list="paises"
+    type="text"
+    name="paises"
+    id="termino"
+    placeholder="Buscar pais..."
+    class="form-control"
+    [(ngModel)]="termino"
+    (input)="teclaPresionada()"
+  /> -->
+<!-- <datalist id="paises">
+    <option value="Chile"></option>
+    <option value="Costa Rica"></option>
+    <option value="Brasil"></option>
+    <option value="Espana"></option>
+  </datalist> -->
+
+<form [formGroup]="miFormulario">
+  <div class="row">
+    <div class="col">
+      <label for="" class="form-label">Pais:</label>
+      <select class="form-select" formControlName="pais">
+        <option value="">--Seleccione Pais--</option>
+        <option *ngFor="let pais of paises" [value]="">{{ pais.name }}</option>
+      </select>
+    </div>
+  </div>
+</form>
+
+<!-- </form> -->
